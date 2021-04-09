@@ -40,22 +40,22 @@ public class Actor : MonoBehaviour
     {
         float l, r, c;
         // LEFT
-        var x = transform.position.x + sensorDistance * Mathf.Cos(angle + sensorAngle);
-        var y = transform.position.y + sensorDistance * Mathf.Sin(angle + sensorAngle) ;
+        var x = transform.position.x + pointSize * sensorDistance * Mathf.Cos(angle + sensorAngle);
+        var y = transform.position.y + pointSize * sensorDistance * Mathf.Sin(angle + sensorAngle) ;
         Normalize(ref x, ref y);
         int a = Mathf.CeilToInt(x / pointSize);
         int b = Mathf.CeilToInt(y / pointSize);
         l = spawner.points[a, b].value;
         // RIGHT
-        x = transform.position.x + sensorDistance * Mathf.Cos(angle-sensorAngle);
-        y = transform.position.y + sensorDistance * Mathf.Sin(angle-sensorAngle);
+        x = transform.position.x + pointSize * sensorDistance * Mathf.Cos(angle-sensorAngle);
+        y = transform.position.y + pointSize * sensorDistance * Mathf.Sin(angle-sensorAngle);
         Normalize(ref x, ref y);
         a = Mathf.CeilToInt(x / pointSize);
         b = Mathf.CeilToInt(y / pointSize);
         r = spawner.points[a, b].value;
         // CENTER
-        x = transform.position.x + sensorDistance * Mathf.Cos(angle);
-        y = transform.position.y + sensorDistance * Mathf.Sin(angle);
+        x = transform.position.x + pointSize * sensorDistance * Mathf.Cos(angle);
+        y = transform.position.y + pointSize * sensorDistance * Mathf.Sin(angle);
         Normalize(ref x, ref y);
         a = Mathf.CeilToInt(x / pointSize);
         b = Mathf.CeilToInt(y / pointSize);
